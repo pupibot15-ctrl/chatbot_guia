@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa: Configuración de Entorno y Primer Chatbot de IA</title>
+    <style>
+        /* Estilos CSS básicos para la guía */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 1.4em;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        ul {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        code {
+            background-color: #e9e9e9;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #333;
+            color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+            border-radius: 0;
+        }
+        .important {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guía Completa: Configuración de Entorno y Primer Chatbot de IA</h1>
+
+        <p>¡Excelente decisión! Vamos a configurar tu entorno de desarrollo desde cero y a construir tu primer chatbot de IA en la terminal. Sigue estos pasos con calma y atención.</p>
+
+        <h3>**Paso 0: Preparación Inicial (Antes de Instalar Nada)**</h3>
+        <ul>
+            <li><strong>Conexión a Internet:</strong> Asegúrate de tener una conexión a Internet estable para descargar los programas.</li>
+            <li><strong>Cierre de Programas:</strong> Cierra cualquier programa innecesario para liberar recursos de tu PC.</li>
+        </ul>
+
+        <h3>**Paso 1: Instalar Python (El Lenguaje de Programación)**</h3>
+        <p>Python es el lenguaje que usaremos. Es crucial instalarlo correctamente.</p>
+        <ol>
+            <li><strong>Descargar Python:</strong>
+                <ul>
+                    <li>Abre tu navegador web y ve a la página oficial de Python: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a></li>
+                    <li>Busca la sección de <strong>"Python 3.10.x"</strong> (o la versión más reciente de Python 3.10, como 3.10.13). <strong>Recomiendo Python 3.10 para mayor estabilidad y compatibilidad</strong> con las librerías que usaremos.</li>
+                    <li>Haz clic en el enlace de descarga para <strong>"Windows installer (64-bit)"</strong> (generalmente un archivo <code>.exe</code>).</li>
+                </ul>
+            </li>
+            <li><strong>Ejecutar el Instalador de Python:</strong>
+                <ul>
+                    <li>Una vez descargado, haz doble clic en el archivo <code>.exe</code> para iniciar la instalación.</li>
+                    <li><div class="important"><strong>¡MUY IMPORTANTE!</strong> En la primera pantalla del instalador, asegúrate de marcar la casilla <strong>"Add Python 3.10 to PATH"</strong> (o la versión que hayas descargado). Esto es <strong>fundamental</strong> para que Python sea reconocido desde cualquier lugar de tu terminal.</div></li>
+                    <li><img src="https://placehold.co/600x300/e0e0e0/333333?text=Python+Installer+Add+to+PATH" alt="Python Installer Add to PATH"></li>
+                    <li>Luego, haz clic en <strong>"Install Now"</strong>.</li>
+                    <li>Espera a que la instalación se complete. Puede tardar unos minutos.</li>
+                </ul>
+            </li>
+            <li><strong>Verificar la Instalación de Python:</strong>
+                <ul>
+                    <li>Abre una <strong>nueva terminal</strong> (busca "CMD" o "PowerShell" en el menú de inicio de Windows y ábrelo).</li>
+                    <li>Escribe el siguiente comando y presiona Enter:
+                        <pre><code>python --version</code></pre>
+                    </li>
+                    <li>Deberías ver algo como <code>Python 3.10.x</code>. Si ves un error o una versión diferente, algo salió mal en la instalación del PATH.</li>
+                    <li>Luego, escribe este comando y presiona Enter:
+                        <pre><code>pip --version</code></pre>
+                    </li>
+                    <li>Deberías ver la versión de pip. Si ambos comandos funcionan, ¡Python está instalado correctamente!</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>**Paso 2: Instalar Visual Studio Code (El Editor de Código)**</h3>
+        <p>VS Code es un editor de código ligero y potente que te facilitará escribir y organizar tu proyecto.</p>
+        <ol>
+            <li><strong>Descargar VS Code:</strong>
+                <ul>
+                    <li>Abre tu navegador web y ve a: <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a></li>
+                    <li>Haz clic en el botón grande de <strong>"Download for Windows"</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Ejecutar el Instalador de VS Code:</strong>
+                <ul>
+                    <li>Una vez descargado, haz doble clic en el archivo <code>.exe</code>.</li>
+                    <li>Acepta el acuerdo de licencia.</li>
+                    <li>En las opciones de instalación, puedes marcar "Add 'Open with Code' action to Windows Explorer context menu" (Agregar 'Abrir con Code' al menú contextual del explorador de Windows) para mayor comodidad.</li>
+                    <li>Sigue los pasos hasta que la instalación se complete.</li>
+                </ul>
+            </li>
+            <li><strong>Instalar la Extensión de Python en VS Code:</strong>
+                <ul>
+                    <li>Abre VS Code.</li>
+                    <li>En el menú lateral izquierdo, haz clic en el icono de <strong>Extensiones</strong> (parece un cuadrado con otros cuadrados saliendo de él, o presiona <code>Ctrl+Shift+X</code>).</li>
+                    <li>En la barra de búsqueda, escribe <code>Python</code>.</li>
+                    <li>Busca la extensión de <strong>"Python" de Microsoft</strong> (es la más popular). Haz clic en <strong>"Install"</strong>.</li>
+                    <li><img src="https://placehold.co/600x300/e0e0e0/333333?text=VS+Code+Python+Extension" alt="VS Code Python Extension"></li>
+                    <li>Esto le dará a VS Code herramientas para trabajar mejor con Python.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>**Paso 3: Crear la Carpeta del Proyecto y el Entorno Virtual**</h3>
+        <p>Es una buena práctica mantener cada proyecto de Python en su propio "entorno virtual" para evitar conflictos entre librerías.</p>
+        <ol>
+            <li><strong>Crear la Carpeta del Proyecto:</strong>
+                <ul>
+                    <li>En tu explorador de archivos de Windows, ve a una ubicación donde quieras guardar tus proyectos (por ejemplo, <code>C:\MisProyectos\</code>).</li>
+                    <li>Crea una nueva carpeta para este proyecto. Por ejemplo, <code>C:\MisProyectos\MiPrimerChatbotIA\</code>.</li>
+                    <li>Dentro de <code>MiPrimerChatbotIA</code>, crea una subcarpeta llamada <code>backend</code>. Tu estructura será:
+                        <pre><code>MiPrimerChatbotIA/
+└── backend/</code></pre>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Abrir la Carpeta en VS Code:</strong>
+                <ul>
+                    <li>Abre VS Code.</li>
+                    <li>Ve a <code>Archivo</code> > <code>Abrir Carpeta...</code> (o <code>Open Folder...</code>).</li>
+                    <li>Navega y selecciona la carpeta <strong><code>MiPrimerChatbotIA</code></strong> (la carpeta raíz de tu proyecto, no <code>backend</code>).</li>
+                </ul>
+            </li>
+            <li><strong>Crear el Entorno Virtual (venv):</strong>
+                <ul>
+                    <li>En VS Code, abre la <strong>Terminal Integrada</strong>. Puedes hacerlo yendo a <code>Terminal</code> > <code>Nueva Terminal</code> (o <code>Ctrl+Shift+Ñ</code> en español, <code>Ctrl+Shift+`</code> en inglés).</li>
+                    <li>Asegúrate de que la terminal esté en la ruta de tu carpeta <code>backend</code>. Si no lo está, usa <code>cd backend</code> para entrar. Deberías ver algo como <code>C:\MisProyectos\MiPrimerChatbotIA\backend></code>.</li>
+                    <li>Escribe el siguiente comando y presiona Enter:
+                        <pre><code>python -m venv venv</code></pre>
+                    </li>
+                    <li>Esto creará una carpeta <code>venv</code> dentro de tu carpeta <code>backend</code>. Puede tardar un momento.</li>
+                </ul>
+            </li>
+            <li><strong>Activar el Entorno Virtual:</strong>
+                <ul>
+                    <li>Una vez que el <code>venv</code> se haya creado, activa el entorno virtual con el comando:
+                        <pre><code>.\venv\Scripts\activate</code></pre>
+                    </li>
+                    <li>Deberías ver <code>(venv)</code> al inicio de la línea de tu terminal, por ejemplo: <code>(venv) C:\MisProyectos\MiPrimerChatbotIA\backend></code>. Esto significa que el entorno virtual está activo.</li>
+                </ul>
+            </li>
+            <li><strong>Seleccionar el Intérprete de Python en VS Code:</strong>
+                <ul>
+                    <li>En la parte inferior derecha de la ventana de VS Code, haz clic en el texto que dice "Python 3.x.x" o "Select Python Interpreter".</li>
+                    <li>Se abrirá una lista en la parte superior. Busca la opción que dice <strong><code>Python 3.10.x ('venv')</code></strong> (o la versión que instalaste). Selecciónala.</li>
+                    <li>Esto le dice a VS Code que use el Python de tu entorno virtual, donde instalarás tus librerías.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>**Paso 4: Instalar las Librerías Necesarias**</h3>
+        <p>Ahora instalaremos las librerías que nos permitirán interactuar con la API de Gemini y cargar nuestra clave API de forma segura.</p>
+        <ol>
+            <li><strong>En tu terminal de VS Code (asegúrate de que <code>(venv)</code> esté activo), escribe el siguiente comando y presiona Enter:</strong>
+                <pre><code>pip install google-generativeai python-dotenv</code></pre>
+                <ul>
+                    <li><code>google-generativeai</code>: Es la librería oficial para interactuar con los modelos Gemini.</li>
+                    <li><code>python-dotenv</code>: Nos permite cargar variables de entorno desde un archivo <code>.env</code> (donde guardaremos nuestra clave API).</li>
+                </ul>
+                <p>Espera a que la instalación se complete.</p>
+            </li>
+            <li><strong>Verificar Librerías Instaladas:</strong>
+                <ul>
+                    <li>En la misma terminal, escribe:
+                        <pre><code>pip freeze</code></pre>
+                    </li>
+                    <li>Deberías ver <code>google-generativeai</code> y <code>python-dotenv</code> en la lista, junto con otras dependencias.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>**Paso 5: Obtener tu Clave API de Google Gemini**</h3>
+        <p>Necesitas una clave API para que tu chatbot pueda comunicarse con los modelos de Gemini.</p>
+        <ol>
+            <li><strong>Crear una Clave API:</strong>
+                <ul>
+                    <li>Abre tu navegador y ve a Google AI Studio: <a href="https://aistudio.google.com/" target="_blank">https://aistudio.google.com/</a></li>
+                    <li>Inicia sesión con tu cuenta de Google.</li>
+                    <li>En el menú lateral izquierdo, busca y haz clic en <strong>"Get API key"</strong> (Obtener clave API).</li>
+                    <li>Haz clic en <strong>"Create API key in new project"</strong> (Crear clave API en nuevo proyecto).</li>
+                    <li>Google generará una clave API. <strong>Cópiala inmediatamente y guárdala en un lugar seguro.</strong> La necesitarás en el siguiente paso.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>**Paso 6: Configurar el Archivo <code>.env</code> (¡Seguridad de Claves!)**</h3>
+        <p>Para mantener tu clave API segura y fuera de tu código, la guardaremos en un archivo <code>.env</code>.</p>
+        <ol>
+            <li><strong>Crear el archivo <code>.env</code>:</strong>
+                <ul>
+                    <li>En VS Code, en el explorador de archivos (panel izquierdo), haz clic derecho en la carpeta <strong><code>backend</code></strong>.</li>
+                    <li>Selecciona <code>Nuevo archivo...</code> (o <code>New File...</code>).</li>
+                    <li>Nombra el archivo <strong><code>.env</code></strong> (asegúrate de incluir el punto al principio).</li>
+                    <li><img src="https://placehold.co/600x300/e0e0e0/333333?text=Creating+.env+file+in+VS+Code" alt="Creating .env file in VS Code"></li>
+                </ul>
+            </li>
+            <li><strong>Añadir tu Clave API a <code>.env</code>:</strong>
+                <ul>
+                    <li>Abre el archivo <code>.env</code> que acabas de crear.</li>
+                    <li>Pega la siguiente línea, <strong>reemplazando <code>TU_CLAVE_API_DE_GEMINI</code> con la clave API que copiaste de Google AI Studio</strong>:
+                        <pre><code>GEMINI_API_KEY='TU_CLAVE_API_DE_GEMINI'</code></pre>
+                    </li>
+                    <li><strong>¡Guarda el archivo <code>.env</code>!</strong> (<code>Ctrl+S</code>).</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>**Paso 7: Escribir el Código del Chatbot**</h3>
+        <p>Ahora, vamos a escribir el código Python para tu chatbot.</p>
+        <ol>
+            <li><strong>Crear el archivo <code>simple_chatbot.py</code>:</strong>
+                <ul>
+                    <li>En VS Code, haz clic derecho en la carpeta <strong><code>backend</code></strong>.</li>
+                    <li>Selecciona <code>Nuevo archivo...</code>.</li>
+                    <li>Nombra el archivo <strong><code>simple_chatbot.py</code></strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Pegar el Código del Chatbot:</strong>
+                <ul>
+                    <li>Abre el archivo <code>simple_chatbot.py</code>.</li>
+                    <li><strong>Copia y pega el siguiente código completo en <code>simple_chatbot.py</code>:</strong></li>
+                </ul>
+            </li>
+        </ol>
+<pre><code class="language-python">import google.generativeai as genai
+import os
+from dotenv import load_dotenv # Importar dotenv para cargar la clave API
+
+# Cargar las variables de entorno del archivo .env
+# Asegúrate de tener un archivo .env en la misma carpeta que este script
+# con una línea como: GEMINI_API_KEY='TU_CLAVE_API_DE_GEMINI'
+load_dotenv()
+
+# --- Obtención de Clave API desde variables de entorno ---
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# --- Configuración de Gemini API ---
+if not GEMINI_API_KEY:
+    print("ERROR: La variable de entorno 'GEMINI_API_KEY' no está configurada.")
+    print("Por favor, crea un archivo .env en la misma carpeta con GEMINI_API_KEY='TU_CLAVE_API'.")
+    exit() # Salir si la clave no está configurada
+
+genai.configure(api_key=GEMINI_API_KEY)
+print("INFO: Conexión con Gemini configurada.")
+
+# --- Inicialización del Modelo Gemini ---
+try:
+    # Usaremos un modelo simple que no requiere herramientas para este ejemplo
+    # Puedes probar con "gemini-pro" si "gemini-1.5-flash" da algún problema inicial
+    model = genai.GenerativeModel("gemini-1.5-flash") 
+    print("INFO: Modelo Gemini-1.5-flash inicializado.")
+except Exception as e:
+    print(f"ERROR: No se pudo inicializar el modelo Gemini: {e}")
+    print("Asegúrate de que tu GEMINI_API_KEY sea válida y que el modelo esté disponible.")
+    exit()
+
+# --- Bucle Principal del Chat en Terminal ---
+def run_terminal_chatbot():
+    print("\n--- Chatbot de IA Básico (Modo Terminal) ---")
+    print("Escribe 'salir' para terminar la conversación.")
+    print("---------------------------------------------\n")
+
+    # Iniciar una nueva sesión de chat sin historial previo para simplicidad
+    # Los mensajes se añadirán al historial de la sesión actual automáticamente
+    chat_session = model.start_chat(history=[])
+
+    while True:
+        user_message = input("Tú: ")
+        if user_message.lower() == 'salir':
+            print("Chatbot: ¡Hasta pronto!")
+            break
+
+        try:
+            # Enviar el mensaje del usuario al modelo
+            response = chat_session.send_message(user_message)
+            
+            # Imprimir la respuesta del modelo
+            print(f"Chatbot: {response.text}")
+
+        except Exception as e:
+            print(f"Chatbot: Lo siento, hubo un error al procesar tu solicitud: {e}")
+            print(f"[ERROR]: Fallo en la comunicación con Gemini: {e}")
+
+# Ejecutar el chatbot
+if __name__ == "__main__":
+    run_terminal_chatbot()</code></pre>
+
+        <h3>**Paso 8: Ejecutar el Chatbot**</h3>
+        <p>¡Es hora de ver tu chatbot de terminal en acción!</p>
+        <ol>
+            <li><strong>Asegúrate de que tu terminal de VS Code esté en la carpeta <code>backend</code> y que <code>(venv)</code> esté activo.</strong></li>
+            <li><strong>Ejecuta el script de Python con el siguiente comando:</strong>
+                <pre><code>python simple_chatbot.py</code></pre>
+            </li>
+            <li>Si todo está correcto, deberías ver los mensajes "INFO: Conexión con Gemini configurada." y "INFO: Modelo Gemini-1.5-flash inicializado.", seguido de "--- Chatbot de IA Básico (Modo Terminal) ---".</li>
+            <li>Ahora puedes escribir tus mensajes después de "Tú: " y presionar Enter. El chatbot responderá.</li>
+        </ol>
+
+        <hr>
+
+        <h3>**Paso 9: Solución de Problemas Comunes**</h3>
+        <ul>
+            <li><strong><code>ModuleNotFoundError</code>:</strong> Significa que una librería no está instalada. Asegúrate de que <code>(venv)</code> esté activo y ejecuta <code>pip install google-generativeai python-dotenv</code>.</li>
+            <li><strong><code>GEMINI_API_KEY no está configurada</code>:</strong> Revisa el archivo <code>.env</code>. Asegúrate de que esté en la misma carpeta que <code>simple_chatbot.py</code> y que la línea <code>GEMINI_API_KEY='TU_CLAVE'</code> esté correcta y sin espacios extra.</li>
+            <li><strong>Errores de conexión a Gemini:</strong> Podría ser un problema con tu clave API (mal escrita, revocada, etc.) o un problema temporal con el servicio de Google. Verifica tu clave en Google AI Studio.</li>
+            <li><strong><code>ImportError</code> persistente:</strong> Si después de todo esto sigues viendo <code>ImportError</code> al ejecutar <code>simple_chatbot.py</code>, es un problema muy inusual. Asegúrate de que tu instalación de Python 3.10 sea limpia y que el <code>venv</code> esté perfectamente aislado.</li>
+        </ul>
+    </div>
+</body>
+</html>
